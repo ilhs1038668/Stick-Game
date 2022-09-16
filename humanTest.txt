@@ -1,0 +1,53 @@
+Sticks input:
+Input:
+9
+800
+102
+90
+Output:
+Welcome to the game of sticks!
+How many sticks are there on the table initially (10-100)? 
+9
+Please enter a number between 10 and 100
+How many sticks are there on the table initially (10-100)? 
+800
+Please enter a number between 10 and 100
+How many sticks are there on the table initially (10-100)? 
+102
+Please enter a number between 10 and 100
+How many sticks are there on the table initially (10-100)? 
+90
+Stick Taking:
+Input:
+0
+45
+69
+3
+Output:
+There are 12 sticks on the board.
+Player 1: How many sticks do you take (1-3)? 
+0
+Please enter a number between 1 and 3
+Player 1: How many sticks do you take (1-3)? 
+45
+Please enter a number between 1 and 3
+Player 1: How many sticks do you take (1-3)? 
+69
+Please enter a number between 1 and 3
+Player 1: How many sticks do you take (1-3)? 
+3
+
+There are 9 sticks on the board.
+Player 2: How many sticks do you take (1-3)? 
+Play again:
+Input:
+yes
+no
+Player 1 Won!
+Play again? (yes or no)
+yes
+...
+Player 1 Won!
+Play again? (yes or no)
+no
+...
