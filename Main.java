@@ -54,6 +54,7 @@ class Main {
   public static void Game(){
     while (true){
     int sticks = Init();
+    int mode = Options();
     int playerTurn = 0;
       while (sticks > 0) {
       int player;
@@ -69,5 +70,10 @@ class Main {
         break;
       }
     }
-  }      
+  } 
+  static int Options(){
+    System.out.println("Options:");
+    System.out.println("Play against a friend (1) \nPlay against the computer (2)");
+    return Scan.nextInt();
+  }
 }
