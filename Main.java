@@ -2,6 +2,7 @@ import java.util.*;
 import java.io.*;
 class Main {
   static Scanner Scan;
+   static AI ai = new AI(0,2);
   public static void main(String[] args) {
    Scan = new Scanner(System.in);
     Game();
@@ -55,6 +56,10 @@ class Main {
     while (true){
     int sticks = Init();
     int mode = Options();
+      
+      if(mode == 1){
+        
+      
     int playerTurn = 0;
       while (sticks > 0) {
       int player;
@@ -69,11 +74,58 @@ class Main {
       if(playAgain.equals("no")){
         break;
       }
+    
+    
+      }
+      
+   else if(mode == 2){
+      ai.currentsticks = sticks;
+      ai.totalsticks = sticks;
+      ai.Init();
+      
+     int playerTurn = 0;
+      while (sticks > 0) {
+      int player;
+      player = playerTurn(playerTurn);
+        if( player == 1){
+      sticks = sticks - playerInput(player, sticks);
+        }
+      else if(player == 2){
+       int dog = ai.input(sticks);
+       //System.out.println(ai.bias1.toString());
+       // System.out.println(ai.bias2.toString());
+        // System.out.println(ai.bias3.toString());
+        System.out.println("AI selects "+ dog);
+        sticks = sticks - dog;
     }
+      playerTurn++;
+    }
+     if(playerTurn(playerTurn) == 2){
+       ai.Learn(true);
+     }
+     else{
+       ai.Learn(false);
+     }
+     System.out.println("Player "+   playerTurn(playerTurn) +" Won!");
+     System.out.println("Play again? (yes or no)");
+      String playAgain = Scan.next();
+      playAgain = playAgain.toLowerCase();
+      if(playAgain.equals("no")){
+        break;
+      }
+    }
+    }
+    
+    
   } 
   static int Options(){
     System.out.println("Options:");
     System.out.println("Play against a friend (1) \nPlay against the computer (2)");
-    return Scan.nextInt();
+    int a = Scan.nextInt();
+    while( a > 2 || a < 1){
+      System.out.println("please select one of the options on the screen");
+      a = Scan.nextInt();
+    }
+    return a;
   }
 }
